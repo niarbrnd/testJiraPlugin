@@ -1,0 +1,29 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="ipaddresses"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="ipaddresses-resources" name="ipaddresses Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="ipaddresses.css" location="/css/ipaddresses.css"/>
+        <resource type="download" name="ipaddresses.js" location="/js/ipaddresses.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>ipaddresses</context>
+    </web-resource>
+<!--    <macro key='footer' name='{footer} formatting macro'-->
+<!--           class='com.atlassian.jira.plugin.editor.ref.FooterMacro'>-->
+<!--        <description>Insert footer content with regards.</description>-->
+<!--        <param name="convert-selector">div.footer-macro:not(.header-macro)</param>-->
+<!--        <param name="convert-function">RefPlugin.Macros.Footer.convert</param>-->
+<!--    </macro>-->
+</atlassian-plugin>
